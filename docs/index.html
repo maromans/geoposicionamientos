@@ -1,15 +1,56 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            color: #333;
+            margin-top: 20px;
+        }
+        p {
+            width: 80%;
+            margin: 0 auto;
+            font-size: 18px;
+            color: #555;
+        }
+        #map {
+            width: 90%;
+            height: 600px;
+            margin: 20px auto;
+            border: 2px solid #ccc;
+        }
+        .contador {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <div style="text-align: center;">
+        <h1>Mapa Interactivo de Radioaficionados Registrados en Argentina</h1>
+      </div>
     
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <p>
+        Este mapa fue creado a partir de los datos oficiales del ENACOM, mostrando la distribución de radioaficionados registrados por ciudad y provincia. Cada marcador indica la cantidad de radioaficionados en esa ciudad; al pasar el cursor sobre el marcador, se despliega la información correspondiente. Este proyecto busca promover el conocimiento y la integración de la comunidad radioaficionada en Argentina.
+    </p>
+    <!-- Contador de visitas gratuito -->
+    <div class="contador">
+        <p>Visitas a esta página:</p>
+        <a href="https://www.freecounterstat.com" title="contador de visitas">
+            <img src="https://freecounterstat.com/count/9frg" alt="contador de visitas">
+        </a>
+    </div>
     
-        <script>
-            L_NO_TOUCH = false;
-            L_DISABLE_3D = false;
-        </script>
-    
-    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+
+    <style>html, body {width: 80%;height: 80%;margin: 0;padding: 0;}</style>
     <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
     <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
