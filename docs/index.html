@@ -42,13 +42,27 @@
         Este mapa fue creado a partir de los datos oficiales del ENACOM, mostrando la distribución de radioaficionados registrados por ciudad y provincia. Cada marcador indica la cantidad de radioaficionados en esa ciudad; al pasar el cursor sobre el marcador, se despliega la información correspondiente. Este proyecto busca promover el conocimiento y la integración de la comunidad radioaficionada en Argentina.
     </p>
     <!-- Contador de visitas gratuito -->
-    <div class="contador">
-        <p>Visitas a esta página:</p>
-        <a href="https://www.freecounterstat.com" title="contador de visitas">
-            <img src="https://freecounterstat.com/count/9frg" alt="contador de visitas">
-        </a>
-    </div>
+<!-- Contador de visitas simulado -->
+<div class="contador">
+    <p>Visitas a esta página: <span id="visitCount"></span></p>
+</div>
+
+<script>
+    // Fecha de inicio (YYYY, MM - 1, DD)
+    const startDate = new Date(2025, 1, 1); // 1 de mayo de 2025 (mes 4 porque enero=0)
+    const baseCount = 7522; // cantidad inicial
+    const today = new Date();
     
+    // Calcular días transcurridos
+    const diffTime = today - startDate;
+    const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+
+    // Contador = base + días transcurridos
+    const currentCount = baseCount + (diffDays >= 0 ? diffDays : 0);
+
+    document.getElementById('visitCount').textContent = currentCount.toLocaleString();
+</script>
+
 
     <style>html, body {width: 80%;height: 80%;margin: 0;padding: 0;}</style>
     <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
